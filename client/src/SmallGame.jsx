@@ -1,7 +1,7 @@
 export default function SmallGame({ boardState, squareWidth }) {
     const squareBorderStyle = "thin solid black";
 
-    function squareState(stateString) {
+    function squareStateMarkup(stateString) {
         switch (stateString) {
             case 'x':
                 return (
@@ -40,7 +40,80 @@ export default function SmallGame({ boardState, squareWidth }) {
                         borderRadius: "50%"
                     }}></div>
                 )
-            case 'none':
+            default:
+                return null;
+        }
+    }
+
+    function cellMarkup(stateString, index) {
+        switch (index) {
+            case 0:
+                return (
+                    <div style={{
+                        borderRight: squareBorderStyle,
+                        borderBottom: squareBorderStyle
+                    }}>{squareStateMarkup(stateString)}</div>
+                );
+            case 1:
+                return (
+                    <div style={{
+                        borderLeft: squareBorderStyle,
+                        borderBottom: squareBorderStyle,
+                        borderRight: squareBorderStyle
+                    }}>{squareStateMarkup(stateString)}</div>
+                );
+            case 2:
+                return (
+                    <div style={{
+                        borderLeft: squareBorderStyle,
+                        borderBottom: squareBorderStyle
+                    }}>{squareStateMarkup(stateString)}</div>
+                );
+            case 3:
+                return (
+                    <div style={{
+                        borderTop: squareBorderStyle,
+                        borderBottom: squareBorderStyle,
+                        borderRight: squareBorderStyle
+                    }}>{squareStateMarkup(stateString)}</div>
+                );
+            case 4:
+                return (
+                    <div style={{
+                        border: squareBorderStyle
+                    }}>{squareStateMarkup(stateString)}</div>
+                );
+            case 5:
+                return (
+                    <div style={{
+                        borderLeft: squareBorderStyle,
+                        borderTop: squareBorderStyle,
+                        borderBottom: squareBorderStyle
+                    }}>{squareStateMarkup(stateString)}</div>
+                );
+            case 6:
+                return (
+                    <div style={{
+                        borderTop: squareBorderStyle,
+                        borderRight: squareBorderStyle
+                    }}>{squareStateMarkup(stateString)}</div>
+                );
+            case 7:
+                return (
+                    <div style={{
+                        borderLeft: squareBorderStyle,
+                        borderTop: squareBorderStyle,
+                        borderRight: squareBorderStyle
+                    }}>{squareStateMarkup(stateString)}</div>
+                );
+            case 8:
+                return (
+                    <div style={{
+                        borderLeft: squareBorderStyle,
+                        borderTop: squareBorderStyle
+                    }}>{squareStateMarkup(stateString)}</div>
+                );
+            default:
                 return null;
         }
     }
@@ -51,65 +124,7 @@ export default function SmallGame({ boardState, squareWidth }) {
             gridTemplateColumns: `${squareWidth}px `.repeat(3).trim(),
             gridTemplateRows: `${squareWidth}px `.repeat(3).trim()
         }}>
-            <div style={{
-                width: {squareWidth},
-                height: {squareWidth},
-                borderRight: squareBorderStyle,
-                borderBottom: squareBorderStyle
-            }}>{squareState('x')}</div>
-            <div style={{
-                width: {squareWidth},
-                height: {squareWidth},
-                borderLeft: squareBorderStyle,
-                borderBottom: squareBorderStyle,
-                borderRight: squareBorderStyle
-            }}>{squareState('o')}</div>
-            <div style={{
-                width: {squareWidth},
-                height: {squareWidth},
-                borderLeft: squareBorderStyle,
-                borderBottom: squareBorderStyle
-            }}></div>
-
-            <div style={{
-                width: {squareWidth},
-                height: {squareWidth},
-                borderTop: squareBorderStyle,
-                borderBottom: squareBorderStyle,
-                borderRight: squareBorderStyle
-            }}></div>
-            <div style={{
-                width: {squareWidth},
-                height: {squareWidth},
-                border: squareBorderStyle
-            }}></div>
-            <div style={{
-                width: {squareWidth},
-                height: {squareWidth},
-                borderLeft: squareBorderStyle,
-                borderTop: squareBorderStyle,
-                borderBottom: squareBorderStyle
-            }}></div>
-
-            <div style={{
-                width: {squareWidth},
-                height: {squareWidth},
-                borderTop: squareBorderStyle,
-                borderRight: squareBorderStyle
-            }}></div>
-            <div style={{
-                width: {squareWidth},
-                height: {squareWidth},
-                borderLeft: squareBorderStyle,
-                borderTop: squareBorderStyle,
-                borderRight: squareBorderStyle
-            }}></div>
-            <div style={{
-                width: {squareWidth},
-                height: {squareWidth},
-                borderLeft: squareBorderStyle,
-                borderTop: squareBorderStyle
-            }}></div>
+            {boardState.map((state, i) => cellMarkup(state, i))}
         </div>
     )
 }

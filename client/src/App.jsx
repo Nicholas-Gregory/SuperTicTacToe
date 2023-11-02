@@ -6,7 +6,17 @@ function App() {
 
   return (
     <>
-      <SmallGame boardWidth={20} squareWidth={30} />
+      <SmallGame boardState={[
+        'x',
+        'o',
+        '',
+        '',
+        'x',
+        'o',
+        'o',
+        '',
+        'x'
+      ]} squareWidth={30} />
     </>
   )
 }
