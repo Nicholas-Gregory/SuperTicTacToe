@@ -1,22 +1,43 @@
 import { useState } from 'react'
-import SmallGame from './SmallGame'
+import BigGame from './BigGame'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <SmallGame boardState={[
-        'x',
-        'o',
-        '',
-        '',
-        'x',
-        'o',
-        'o',
-        '',
-        'x'
-      ]} squareWidth={30} />
+      <BigGame 
+        boardState={[
+          {
+            smallState: ['','','','','','','','','']
+          },
+          {
+            smallState: ['','','','','','','','','']
+          },
+          {
+            smallState: ['','','','','','','','','']
+          },
+          {
+            smallState: ['','','','','','','','','']
+          },
+          {
+            smallState: ['','','','x','','','','','']
+          },
+          {
+            smallState: ['','','','','','','','','']
+          },
+          {
+            smallState: ['','','','','','o','','','']
+          },
+          {
+            smallState: ['','','','','','','','','']
+          },
+          {
+            smallState: ['','','','','','','','','']
+          }
+        ]}
+        squareWidth={200}
+      />
     </>
   )
 }
