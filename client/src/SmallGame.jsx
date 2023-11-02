@@ -1,6 +1,6 @@
 import { squareBorderStyleObject } from "./utils";
 
-export default function SmallGame({ boardState, squareWidth }) {
+export default function SmallGame({ boardState, squareWidth, transparent }) {
     const squareBorderStyle = "thin solid black";
 
     function squareStateMarkup(stateString) {
@@ -48,7 +48,13 @@ export default function SmallGame({ boardState, squareWidth }) {
     }
 
     function cellMarkup(stateString, index) {
-        return <div key={index} style={squareBorderStyleObject(index, squareBorderStyle)}>{squareStateMarkup(stateString)}</div>
+        return <div 
+            key={index} 
+            style={{
+                ...squareBorderStyleObject(index, squareBorderStyle),
+                opacity: `${transparent ? '0.3': '1'}`
+            }}
+        >{squareStateMarkup(stateString)}</div>
     }
 
     return (
