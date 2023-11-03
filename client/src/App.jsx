@@ -9,31 +9,56 @@ function App() {
       <BigGame 
         boardState={[
           {
-            smallState: ['','','','','','','','','']
+            smallState: {
+              squares: ['','','','','','','','',''],
+              row: 'tltr'
+            }
           },
           {
-            smallState: ['','','','','','','','','']
+            smallState: {
+              squares: ['','','','','','','','',''],
+              row: 'tlbl'
+            }
           },
           {
-            smallState: ['','','','','','','','','']
+            smallState: {
+              squares: ['','','','','','','','',''],
+              row: 'tlbr'
+            }
           },
           {
-            smallState: ['','','','','','','','','']
+            smallState: {
+              squares: ['','','','','','','','',''],
+              row: 'trbl'
+            }
           },
           {
-            smallState: ['','','','x','','','','','']
+            smallState: {
+              squares: ['','','','x','','','','',''],
+              row: 'lmrm'
+            }
           },
           {
-            smallState: ['','','','','','','','','']
+            smallState: {
+              squares: ['','','','','','','','',''],
+              row: 'tmbm'
+            }
           },
           {
-            smallState: ['','','','','','o','','','']
+            smallState: {
+              squares: ['','','','','','o','','','']
+            }
           },
           {
-            smallState: ['','','','','','','','','']
+            smallState: {
+              squares: ['','','','','','','','','']
+            }
           },
           {
-            smallState: ['','','','','','','','','']
+            smallState: {
+              squares: ['','','','','','','','',''],
+              row: 'blbr'
+            }
           }
         ]}
         squareWidth={200}
