@@ -2,8 +2,6 @@ import { useState } from 'react'
 import BigGame from './BigGame'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <BigGame 
@@ -52,13 +50,17 @@ function App() {
           {
             smallState: {
               squares: ['','','','','','','','','']
-            }
+            },
+            occupied: 'x',
+            transparent: true
           },
           {
             smallState: {
               squares: ['','','','','','','','',''],
               row: 'blbr'
-            }
+            },
+            occupied: 'o',
+            transparent: true
           }
         ]}
         squareWidth={200}

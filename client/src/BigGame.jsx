@@ -1,5 +1,5 @@
 import SmallGame from "./SmallGame";
-import { squareBorderStyleObject } from "./utils";
+import { squareBorderStyleObject, squareStateMarkup } from "./utils";
 
 export default function BigGame({ boardState, squareWidth }) {
     const squareBorderStyle = "thin solid black"; 
@@ -27,6 +27,7 @@ export default function BigGame({ boardState, squareWidth }) {
                             transparent={square.transparent}
                         />
                     </div>
+                    {squareStateMarkup(square.occupied, squareWidth, squareBorderStyle)}
                 </div>
             )}
         </div>
